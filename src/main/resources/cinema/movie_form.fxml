@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="14.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinema.controller.MovieFormController">
+    <padding>
+        <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
+    </padding>
+    <children>
+        <Label fx:id="headerLabel" styleClass="section-title" text="Новый фильм" />
+        <GridPane hgap="12.0" vgap="12.0">
+            <columnConstraints>
+                <ColumnConstraints minWidth="120.0" />
+                <ColumnConstraints minWidth="260.0" />
+            </columnConstraints>
+            <children>
+                <Label text="Название *" GridPane.rowIndex="0" />
+                <TextField fx:id="titleField" promptText="Например, Начало" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Жанр *" GridPane.rowIndex="1" />
+                <ComboBox fx:id="genreCombo" editable="true" maxWidth="1.7976931348623157E308" promptText="Выберите или введите" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Длительность, мин *" GridPane.rowIndex="2" />
+                <TextField fx:id="durationField" promptText="1–400" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Возраст *" GridPane.rowIndex="3" />
+                <ComboBox fx:id="ageCombo" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Цена билета, ₸ *" GridPane.rowIndex="4" />
+                <TextField fx:id="priceField" promptText="Например, 2500" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <children>
+                <Button defaultButton="true" onAction="#onSave" styleClass="accent" text="Сохранить" />
+                <Button cancelButton="true" onAction="#onCancel" text="Отмена" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
